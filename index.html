@@ -3,22 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phoenix AI - Student Assistant</title>
+    <meta name="google-site-verification" content="PASTE_YOUR_VERIFICATION_CODE_HERE">
+    <title>Phoenix AI Studio — Next-Gen Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat-container">
-        <header>
-            <h1>🔥 Phoenix AI</h1>
-            <p>Your Personal Study & Code Assistant</p>
-        </header>
-        
-        <div id="chat-box" class="chat-box"></div>
-        
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Ask Phoenix anything..." autocomplete="off">
-            <button onclick="sendMessage()">Send</button>
-        </div>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-glow-icon">🔥</div>
+                <div class="brand-text">
+                    <h1>Phoenix AI</h1>
+                    <span class="badge">Studio X</span>
+                </div>
+            </div>
+
+            <!-- New Chat & Home Navigation -->
+            <div class="sidebar-action">
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    <span class="btn-icon">+</span> New Workspace Session
+                </button>
+                <a href="login.html" class="home-link-btn">
+                    <span>🏠</span> Portal Login Page
+                </a>
+            </div>
+
+            <!-- Saved Chats History List -->
+            <div class="history-section">
+                <p class="section-title">Session History</p>
+                <div id="history-list" class="history-list"></div>
+            </div>
+
+            <div class="nav-section">
+                <p class="section-title">Intelligence Modules</p>
+                <button class="preset-btn" onclick="sendPreset('Explain this coding concept clearly with an architectural breakdown and code example')">
+                    <span class="icon-box">💻</span> Code Architecture & Debug
+                </button>
+                <button class="preset-btn" onclick="sendPreset('Summarize this complex study topic into master bullet points with key takeaways')">
+                    <span class="icon-box">📚</span> Deep Study Synthesizer
+                </button>
+                <button class="preset-btn" onclick="sendPreset('Create a rigorous practice quiz with tricky exam questions and answers')">
+                    <span class="icon-box">🎯</span> Advanced Exam Simulator
+                </button>
+                <button class="preset-btn" onclick="sendPreset('Brainstorm high-impact creative strategies and innovative ideas for my project')">
+                    <span class="icon-box">💡</span> Creative Innovation Hub
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span>Groq High-Speed Core Active</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-topbar">
+                <div class="topbar-info">
+                    <h2>Workspace Core</h2>
+                    <p>Executing high-speed inference via Llama model infrastructure</p>
+                </div>
+                <div class="topbar-actions">
+                    <div class="user-pill">🔥 Creator Mode</div>
+                </div>
+            </header>
+
+            <div id="chat-box" class="chat-messages">
+                <div class="message ai-message">
+                    <div class="avatar-glow">🔥</div>
+                    <div class="content">
+                        <h3>System Initialized.</h3>
+                        <p>Welcome back to Phoenix AI Studio. Select a module or type your query below to begin engineering or studying at lightning speed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-card">
+                    <input type="text" id="user-input" placeholder="Ask Phoenix anything, paste code, or request a breakdown..." autocomplete="off" onkeydown="checkEnter(event)">
+                    <button onclick="sendMessage()" class="send-btn" title="Send message">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+                <div class="footer-note">Phoenix AI Studio • Secured Local Storage & High-Performance Inference</div>
+            </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
