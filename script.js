@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "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"; 
+const GROQ_API_KEY = "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"; 
 
 let currentChatId = Date.now().toString();
 
